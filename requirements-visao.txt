@@ -1,0 +1,6 @@
+# Dependências extras para contar repetições pela câmera (estacao.py --visao)
+# Python 3.10-3.13
+-r requirements.txt
+ultralytics
+opencv-python
+mediapipe==0.10.35

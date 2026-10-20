@@ -1,0 +1,2 @@
+# Bibliotecas usadas no projeto Wokwi (Library Manager)
+MFRC522

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Gym Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Smart Gym</h1>
+      <p class="sub">Monitoramento das estações em tempo real · MQTT</p>
+    </div>
+    <div id="broker" class="pill pill-off">Broker: conectando…</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Estações</h2>
+      <div id="estacoes" class="grid">
+        <p class="vazio">Aguardando a primeira mensagem MQTT…</p>
+      </div>
+    </section>
+
+    <section class="duas-colunas">
+      <div>
+        <h2>Séries finalizadas</h2>
+        <table>
+          <thead><tr><th>Hora</th><th>Estação</th><th>Aluno</th><th>Série</th><th>Reps</th><th>Inválidas</th><th>Duração</th></tr></thead>
+          <tbody id="series"></tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Acessos RFID</h2>
+        <table>
+          <thead><tr><th>Hora</th><th>Estação</th><th>UID</th><th>Aluno</th><th>Resultado</th></tr></thead>
+          <tbody id="acessos"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

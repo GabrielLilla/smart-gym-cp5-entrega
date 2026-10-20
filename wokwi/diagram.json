@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Smart Gym - CP05",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "ledVerde", "top": -130, "left": 120, "attrs": { "color": "green", "label": "LIVRE" } },
+    { "type": "wokwi-led", "id": "ledVerm", "top": -130, "left": 180, "attrs": { "color": "red", "label": "OCUPADA" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -60, "left": 110, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": -60, "left": 170, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": -140, "left": 250, "attrs": { "volume": "0.2" } },
+    { "type": "wokwi-pushbutton", "id": "btnRep", "top": 260, "left": 40, "attrs": { "color": "blue", "label": "REPETICAO" } },
+    { "type": "wokwi-pushbutton", "id": "btnFim", "top": 260, "left": 180, "attrs": { "color": "yellow", "label": "FIM DA SERIE" } }
+  ],
+  "connections": [
+    [ "uno:5", "r1:2", "green", [] ],
+    [ "r1:1", "ledVerde:A", "green", [] ],
+    [ "ledVerde:C", "uno:GND.1", "black", [] ],
+    [ "uno:6", "r2:2", "red", [] ],
+    [ "r2:1", "ledVerm:A", "red", [] ],
+    [ "ledVerm:C", "uno:GND.1", "black", [] ],
+    [ "uno:8", "bz:2", "orange", [] ],
+    [ "bz:1", "uno:GND.1", "black", [] ],
+    [ "uno:2", "btnRep:1.l", "blue", [] ],
+    [ "btnRep:2.l", "uno:GND.2", "black", [] ],
+    [ "uno:3", "btnFim:1.l", "gold", [] ],
+    [ "btnFim:2.l", "uno:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}
